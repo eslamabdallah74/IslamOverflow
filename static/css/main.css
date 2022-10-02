@@ -1,0 +1,80 @@
+@import "bootstrap-rtl.min.css";
+@import "bootstrap.min.css";
+@import "jquery-te-1.4.0.css";
+@import "owl.carousel.min.css";
+@import "owl.theme.default.min.css";
+@import "intlTelInput.min.css";
+@import "jquery.fancybox.min.css";
+@import "leaflet.css";
+@import "selectize.css";
+@import "style.css";
+@import "upvotejs.min.css";
+@import "style-rtl.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/* Our code */
+.logo {
+    color: white;
+    font-size: 24px;
+}
+
+.nav-right-button a {
+    color: white;
+}
+
+/* Text Editor Plugin */
+.text-editor{
+    background-color: #E8EEF4;
+}
+.text-editor-holder{
+    border: 1px solid gray;
+}
+
+.text-editor button {
+    border: 0;
+    border-left: 1px solid white;
+    padding: 4px;
+    background-color: #E8EEF4;
+    color: black;
+}
+.text-editor .is-active {
+    color: white;
+    background-color: #4e555b;
+}
+.text-editor  ul li {
+    padding: 0;
+}
+.underline {
+    text-decoration: underline;
+}
+.line-through {
+    text-decoration: line-through;
+}
+
+.text-area-holder ul,ol {
+    padding-left: 0;
+    padding-right: 20px;
+}
+.text-area-holder ul{
+    list-style-type: disc;
+}
+.code {
+    font-size: 87.5%;
+    color: #e83e8c;
+}
+
+.ProseMirror {
+    min-height: 16rem;
+}
+
+ul .font {
+    z-index: 9999 !important;
+}
+ul .font button {
+    border: 0;
+    border-bottom: 0.5px solid black;
+}
+
+.menu-bar>ul>li:hover .dropdown-menu-item {
+    top: 100% !important;
+}
