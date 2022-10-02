@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.0",
+    "@nuxtjs/auth-next": "5.0.0-1648802546.c9880dc",
     "@nuxtjs/axios": "^5.13.6",
     "@tiptap/extension-document": "^2.0.0-beta.199",
     "@tiptap/extension-highlight": "^2.0.0-beta.199",
@@ -32,9 +33,6 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
     "@nuxtjs/eslint-config": "^8.0.0",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "eslint": "^8.4.1",
-    "eslint-plugin-nuxt": "^3.1.0",
-    "eslint-plugin-vue": "^8.2.0"
+    "@nuxtjs/eslint-module": "^3.0.2"
   }
 }
