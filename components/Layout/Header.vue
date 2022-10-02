@@ -29,9 +29,11 @@
                                         <a href="#"> الصفحه الشخصية <IconDownArrow /> </a>
                                         <ul class="dropdown-menu-item">
                                             <li > <NuxtLink to="/Profile/Edit-Profile">تعديل الصفة الشخصية</NuxtLink></li>
-
                                         </ul>
                                     </li>
+                                    <li v-if="$auth.loggedIn">
+                                      <a href="#"> {{ $auth.user.name }}  </a>
+                                  </li>
                                 </ul><!-- end ul -->
                             </nav><!-- end menu-bar -->
                             <div class="nav-right-button">
