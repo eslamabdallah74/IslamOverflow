@@ -38,6 +38,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/composition-api/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -60,7 +61,9 @@ export default {
         endpoints: {
           login: {
             url: "/api/login",
-            method: "POST"
+          },
+          logout: {
+            url:"/api/logout"
           }
         }
       }

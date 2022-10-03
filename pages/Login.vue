@@ -4,16 +4,32 @@ export default {
     return {
       email: '',
       password: '',
+      errorMessage: ''
     }
   },
+
   methods: {
     async login() {
-      await this.$auth.loginWith('laravelSanctum', {
-        data: {
-          email: this.email,
-          password: this.password,
-        },
-      })
+      if (this.email == '' || this.password == '') {
+        this.errorMessage = "Email and passowrd can't be empty"
+      } else {
+        // Send login request
+        try {
+          await this.$auth.loginWith('laravelSanctum', {
+            data: {
+              email: this.email,
+              password: this.password,
+            },
+          });
+          this.$router.push('/')
+        } catch (error) {
+            // this.errorMessage = error
+
+          this.errorMessage = "Wrong email or password"
+        }
+
+      }
+
     },
   },
 }
@@ -42,15 +58,14 @@ export default {
             </div>
             <div class="form-group">
               <label class="fs-14 text-black fw-medium lh-18">Email</label>
-              <input type="email" name="email" v-model="email"
-              class="form-control form--control" placeholder="Email address">
+              <input type="email" name="email" v-model="email" class="form-control form--control"
+                placeholder="Email address">
             </div><!-- end form-group -->
             <div class="form-group">
               <label class="fs-14 text-black fw-medium lh-18">Password</label>
               <div class="input-group">
-                <input class="form-control form--control password-field" v-model="password"
-                type="password" name="password"
-                  placeholder="Password">
+                <input class="form-control form--control password-field" v-model="password" type="password"
+                  name="password" placeholder="Password">
                 <div class="input-group-append">
                   <button class="btn theme-btn-outline theme-btn-outline-gray toggle-password" type="button">
                     <svg class="eye-on" xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 0 24 24"
@@ -82,6 +97,7 @@ export default {
               <button @click.prevent="login" id="send-message-btn" class="btn theme-btn w-100" type="submit">Log in <i
                   class="la la-arrow-right icon ml-1"></i>
               </button>
+              <div style="text-align: center; color:brown; font-weight:bold;"> {{ errorMessage }} </div>
             </div><!-- end form-group -->
             <!-- <div class="social-icon-box">
                                 <div class="pb-3 d-flex align-items-center">
