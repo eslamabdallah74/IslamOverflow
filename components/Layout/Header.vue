@@ -48,6 +48,7 @@ export default {
                       </li>
                     </ul>
                   </li>
+                  <!-- <span>Name:{{username}}</span> -->
                   <li v-if="$auth.loggedIn">
                     <a href="#"> الصفحه الشخصية
                       <IconDownArrow />
