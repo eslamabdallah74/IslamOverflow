@@ -1,6 +1,7 @@
 
 <script>
 export default {
+
   data() {
     return {
       name: "",
@@ -11,6 +12,7 @@ export default {
       ValidationErrors: Object,
     };
   },
+
   methods: {
     async handleSubmit(e) {
       e.preventDefault();

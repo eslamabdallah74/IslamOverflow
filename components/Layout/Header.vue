@@ -42,7 +42,7 @@ export default {
                       <li>
                         <NuxtLink to="/Questions"> أجدد الأسألة</NuxtLink>
                       </li>
-                      <li>
+                      <li v-if="$auth.loggedIn">
                         <NuxtLink to="/Questions/Ask"> سؤال جديد</NuxtLink>
                       </li>
                     </ul>
@@ -63,7 +63,7 @@ export default {
                   </li>
                 </ul><!-- end ul -->
               </nav><!-- end menu-bar -->
-              <div class="nav-right-button">
+              <div v-if="!$auth.loggedIn" class="nav-right-button">
                 <NuxtLink class="btn theme-btn theme-btn-outline mr-2" to="/Login">
                   <IconLogin /> تسجيل الدخول
                 </NuxtLink>

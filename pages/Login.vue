@@ -23,7 +23,6 @@ export default {
                 password: this.password,
               },
             })
-          this.$router.push('/')
             .catch((err) => {
               console.error(err.response.data);
             });
@@ -34,6 +33,8 @@ export default {
       }
     },
   },
+  // Middleware
+  middleware: ['guest']
 };
 </script>
 
