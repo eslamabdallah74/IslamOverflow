@@ -16,7 +16,6 @@ export default {
       } else {
         // Send login request
         try {
-          await this.$axios.$get('sanctum/csrf-cookie');
           await this.$auth
             .loginWith("laravelSanctum", {
               data: {
@@ -24,16 +23,12 @@ export default {
                 password: this.password,
               },
             })
-            .then((response) => {
-              console.log(response.data);
-            })
+            this.$router.push('/')
             .catch((err) => {
               console.error(err.response.data);
             });
-          /*   this.$router.push('/') */
         } catch (error) {
           // this.errorMessage = error
-
           this.errorMessage = "Wrong email or password";
         }
       }

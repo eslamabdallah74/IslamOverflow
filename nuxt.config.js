@@ -13,8 +13,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet',  href: '/css/main.css' },
-      { rel: 'stylesheet',  href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' }
+      { rel: 'stylesheet', href: '/css/main.css' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' }
     ],
     css: [
     ],
@@ -54,9 +54,9 @@ export default {
     }
   },
   auth: {
-    plugins: [ '~/plugins/auth.js' ],
+    plugins: ['~/plugins/auth.js'],
     strategies: {
-      "laravelSanctum":{
+      "laravelSanctum": {
         provider: "laravel/sanctum",
         url: "http://localhost:8000",
         endpoints: {
@@ -64,8 +64,8 @@ export default {
             url: "/api/login",
           },
           logout: {
-            url:"/api/logout"
-          }
+            url: "/api/logout"
+          },
         }
       }
     }
