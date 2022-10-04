@@ -17,6 +17,7 @@ export default {
       if (this.password === this.password_confirmation) {
         // register request
         try {
+          await this.$axios.get("http://localhost:8000/sanctum/csrf-cookie");
           let res = await this.$axios
             .post("http://localhost:8000/api/register", {
               name: this.name,
@@ -24,7 +25,7 @@ export default {
               password: this.password,
               password_confirmation: this.password_confirmation,
             });
-            this.$router.push('/');
+          this.$router.push('/');
         } catch (error) {
           this.ValidationErrors = error;
           console.log(this.ValidationErrors.response.data.errors);
@@ -151,7 +152,7 @@ export default {
                 <label class="fs-14 text-black fw-medium lh-18">password confirmation</label>
                 <input type="password" v-model="password_confirmation" class="form-control form--control"
                   placeholder="Email address" />
-                  <span class="text-danger">{{passwordError}}</span>
+                <span class="text-danger">{{passwordError}}</span>
               </div>
               <!-- end form-group -->
               <div class="form-group">
