@@ -16,16 +16,14 @@ export default {
       } else {
         // Send login request
         try {
-          await this.$auth
-            .loginWith("laravelSanctum", {
-              data: {
-                email: this.email,
-                password: this.password,
-              },
-            })
-            .then((err) => {
-              console.error(err);
-            });
+          this.$auth.loginWith('laravelSanctum', {
+            data: {
+              email: this.email,
+              password: this.password,
+            }
+          }).then((res) => {
+            this.$axios('/user');
+          });
         } catch (error) {
           // this.errorMessage = error
           this.errorMessage = "Wrong email or password";
