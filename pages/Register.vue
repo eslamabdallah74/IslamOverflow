@@ -31,6 +31,8 @@ export default {
                   email: this.email,
                   password: this.password,
                 }
+              }).then((res) => {
+                this.$axios('/user');
               });
             });
           this.$router.push('/');

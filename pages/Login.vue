@@ -23,8 +23,8 @@ export default {
                 password: this.password,
               },
             })
-            .catch((err) => {
-              console.error(err.response.data);
+            .then((err) => {
+              console.error(err);
             });
         } catch (error) {
           // this.errorMessage = error
