@@ -54,7 +54,7 @@ export default {
                     </a>
                     <ul class="dropdown-menu-item">
                       <li>
-                        <NuxtLink to="/Profile/Edit-Profile">{{ user.name}}</NuxtLink>
+                        <NuxtLink to="/Profile/Edit-Profile">{{ $auth.user.name}}</NuxtLink>
                       </li>
                       <li>
                         <a href="#" @click.prevent="logout">تسجيل خروج</a>

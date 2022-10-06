@@ -16,7 +16,7 @@ export default {
       } else {
         // Send login request
         try {
-          this.$auth.loginWith('laravelSanctum', {
+          await this.$auth.loginWith('laravelSanctum', {
             data: {
               email: this.email,
               password: this.password,
