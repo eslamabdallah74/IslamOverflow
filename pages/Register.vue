@@ -19,7 +19,6 @@ export default {
       if (this.password === this.password_confirmation) {
         // register request
         try {
-          await this.$axios("http://localhost:8000/sanctum/csrf-cookie");
           let res = await this.$axios
             .post("http://localhost:8000/api/register", {
               name: this.name,

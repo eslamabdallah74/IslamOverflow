@@ -21,8 +21,6 @@ export default {
               email: this.email,
               password: this.password,
             }
-          }).then((res) => {
-            this.$axios('/user');
           });
         } catch (error) {
           // this.errorMessage = error
