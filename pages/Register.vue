@@ -10,7 +10,6 @@ export default {
       passwordError: "",
     };
   },
-
   methods: {
     async handleSubmit(e) {
       e.preventDefault();
@@ -56,6 +55,9 @@ export default {
       }
     },
   },
+
+  // Middleware
+  middleware: ['guest']
 };
 </script>
 <template>

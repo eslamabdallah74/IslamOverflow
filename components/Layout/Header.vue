@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      user: this.$auth.user,
+      
     }
   },
   methods: {
