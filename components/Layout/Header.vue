@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      
+
     }
   },
   methods: {
@@ -54,7 +54,7 @@ export default {
                     </a>
                     <ul class="dropdown-menu-item">
                       <li>
-                        <NuxtLink to="/Profile/Edit-Profile">{{ $auth.user.name}}</NuxtLink>
+                        <NuxtLink to="/Profile/Edit"> الصفحة الشخصية </NuxtLink>
                       </li>
                       <li>
                         <a href="#" @click.prevent="logout">تسجيل خروج</a>

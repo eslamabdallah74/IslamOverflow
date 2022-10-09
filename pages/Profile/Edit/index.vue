@@ -5,7 +5,7 @@ export default {
   middleware: ['auth']
 }
 </script>
-  
+
 <template>
   <div>
     <!-- Head -->
@@ -20,6 +20,7 @@ export default {
           <SectionProfileRecords />
         </div>
       </div>
+
     </div>
   </div>
 </template>

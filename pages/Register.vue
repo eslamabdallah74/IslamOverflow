@@ -13,6 +13,7 @@ export default {
   methods: {
     async handleSubmit(e) {
       e.preventDefault();
+      console.log(process.env.API_URL)
       let erros = [];
       if (this.password === this.password_confirmation) {
         // register request
@@ -22,7 +23,7 @@ export default {
           document.getElementById("EmailValdation").innerHTML = '';
           document.getElementById("PasswordValdation").innerHTML = '';
           let res = await this.$axios
-            .post("http://localhost:8000/api/register", {
+            .post("register", {
               name: this.name,
               email: this.email,
               password: this.password,

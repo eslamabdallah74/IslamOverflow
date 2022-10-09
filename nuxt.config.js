@@ -40,7 +40,9 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/composition-api/module'
   ],
-
+  env: {
+    api_url: process.env.API_URL,
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -49,7 +51,7 @@ export default {
   ],
   proxy: {
     '/laravel': {
-      target: 'http://localhost:8000',
+      target: process.env.API_DOMAIN,
       pathRewrite: { '^/laravel': '/' }
     }
   },
@@ -58,7 +60,7 @@ export default {
     strategies: {
       "laravelSanctum": {
         provider: "laravel/sanctum",
-        url: "http://localhost:8000",
+        url: process.env.API_DOMAIN,
         endpoints: {
           login: {
             url: "/api/login",
@@ -74,7 +76,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://localhost:8000',
+    baseURL: process.env.API_DOMAIN,
     credentials: true,
   },
 

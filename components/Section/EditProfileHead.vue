@@ -30,10 +30,10 @@
             </div><!-- end row -->
             <ul class="nav nav-tabs generic-tabs generic--tabs generic--tabs-2 mt-4" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <NuxtLink class="nav-link" to="/Profile/Edit-Profile"> أعدادت الملف الشخصي </NuxtLink>
+                    <NuxtLink class="nav-link" to="/Profile/Edit"> أعدادت الملف الشخصي </NuxtLink>
                 </li>
                 <li class="nav-item">
-                    <NuxtLink class="nav-link" to="/Profile/Change-Password">   تغير كلمه المرور </NuxtLink>
+                    <NuxtLink class="nav-link" to="/Profile/Edit/Change-Password">   تغير كلمه المرور </NuxtLink>
                 </li>
             </ul>
         </div><!-- end container -->
