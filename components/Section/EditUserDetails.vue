@@ -4,9 +4,23 @@ import vueCountryRegionSelect from 'vue-country-region-select'
 Vue.use(vueCountryRegionSelect)
 
 export default {
+  mounted() {
+    setTimeout(() => {
+      this.name = this.$auth.user.name;
+      this.title = this.$auth.user.title;
+      this.about = this.$auth.user.about;
+      this.website = this.$auth.user.website;
+      this.country = this.$auth.user.location;
+      this.image = this.$auth.user.profile_img_url;
+    }, 500);
+  },
   data() {
     return {
-      user: this.$auth.user,
+      name: "",
+      title: "",
+      about: "",
+      website: "",
+      location: "",
       country: this.$auth.user.location ? this.$auth.user.location : '',
       image: '',
     }
@@ -14,18 +28,25 @@ export default {
   methods: {
     update() {
       try {
-        $axios.post('/user-update', {
-          name: user.name,
-          about: user.about,
-          title: user.title,
-          website: user.website,
-          image: this.image,
-        });
+        console.log(this.name)
+        console.log(this.title)
+        console.log(this.about)
+        console.log(this.website)
+        console.log(this.country)
+        // $axios.post('/user-update', {
+        //   name: user.name,
+        //   about: user.about,
+        //   title: user.title,
+        //   website: user.website,
+        //   image: this.image,
+        // });
       } catch (error) {
         console.log(error)
+
       }
     }
-  }
+  },
+
 }
 </script>
 
@@ -46,10 +67,10 @@ export default {
                   <!-- Image -->
                   <div class="col-lg-12 col-md-12 mb-4">
                     <div class="edit-profile-photo d-flex flex-wrap align-items-center">
-                      <img :src="user.profile_img_url" alt="user avatar" class="profile-img mr-4">
+                      <img :src="image" alt="user avatar" class="profile-img mr-4">
                       <div>
                         <div class="file-upload-wrap file--upload-wrap">
-                          <input type="file"  class="multi file-upload-input" multiple>
+                          <input type="file" class="multi file-upload-input" multiple>
                           <span class="file-upload-text"><i class="la la-photo mr-2"></i>Upload Photo</span>
                         </div>
                         <p class="fs-14">Maximum file size: 10 MB.</p>
@@ -60,8 +81,7 @@ export default {
                     <div class="input-box">
                       <label class="fs-13 text-black lh-20 fw-medium">Display name</label>
                       <div class="form-group">
-                        <input v-model="user.name" class="form-control form--control" type="text" name="text"
-                          value="Arden Smith">
+                        <input v-model="name" class="form-control form--control" type="text" name="text">
                       </div>
                     </div>
                   </div><!-- end col-lg-6 -->
@@ -69,7 +89,7 @@ export default {
                     <div class="input-box">
                       <label class="fs-13 text-black lh-20 fw-medium">title </label>
                       <div class="form-group">
-                        <input v-model="user.title" class="form-control form--control" type="text" name="text">
+                        <input v-model="title" class="form-control form--control" type="text" name="text">
                       </div>
                     </div>
                   </div>
@@ -86,7 +106,7 @@ export default {
                     <div class="input-box">
                       <label class="fs-15 text-black lh-20 fw-medium">موقعك </label>
                       <div class="form-group">
-                        <input v-model="user.website" class="form-control form--control" type="text" name="text"
+                        <input v-model="website" class="form-control form--control" type="text" name="text"
                           placeholder="www.googl.com">
                       </div>
                     </div>
@@ -95,7 +115,7 @@ export default {
                     <div class="input-box">
                       <label class="fs-15 text-black lh-20 fw-medium">About me</label>
                       <div class="form-group">
-                        <textarea v-model="user.about" placeholder="اكنب نبذه عنك"
+                        <textarea v-model="about" placeholder="اكنب نبذه عنك"
                           class="form-control form--control user-text-editor" rows="10" cols="40"></textarea>
                       </div>
                     </div>
@@ -104,7 +124,7 @@ export default {
               </div><!-- end settings-item -->
               <div class="col-lg-12">
                 <div class="submit-btn-box pt-3">
-                  <button class="btn theme-btn" type="button">Save changes</button>
+                  <button class="btn theme-btn" @click.prevent="update" type="button">Save changes</button>
                 </div>
               </div><!-- end col-lg-12 -->
             </form>
